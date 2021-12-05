@@ -1,0 +1,8 @@
+@import "./base.css";
+
+@import "./components/header.css";
+@import "./components/footer.css";
+@import "./components/infographic.css";
+@import "./components/ratings.css";
+@import "./components/teams-pairs.css";
+

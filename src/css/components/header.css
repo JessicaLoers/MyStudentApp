@@ -1,0 +1,17 @@
+header {
+  padding: 1.5rem;
+  background-image: url(../../image/background_shape_1.svg),
+    linear-gradient(to top, transparent 20px, var(--header) 20px);
+  background-repeat: repeat-x;
+  background-position: bottom;
+  background-size: 375px 81px, 100%;
+}
+
+.header-label {
+  color: #7589a2;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+}

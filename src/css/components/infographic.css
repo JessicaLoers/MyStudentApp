@@ -1,0 +1,14 @@
+.energy {
+    margin: 2rem 1.2rem;
+}
+
+.energy__infographic {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  }
+
+.energy__level {
+  display: flex;
+  flex-direction: column;
+}

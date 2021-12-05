@@ -1,0 +1,166 @@
+:root {
+  --danger-strong: #ff5a36;
+  --danger-medium: #ff9c86;
+  --danger-light: #ffbdaf;
+  --danger-ultralight: #ffded7;
+  --background: #ffffff;
+  --header: #f8f8f8;
+  --unselected-ratings: #e0e4e8;
+
+  --primary: #193251;
+  --secondary: #7589a2;
+
+  --border-primary: 1px solid #7589a2;
+  --border-secondary: 1px solid #e0e4e8;
+
+  --boxshadow-primary: 0px 4px 10px rgba(255, 90, 54, 0.4);
+  --boxshadow-secondary: 0px 2px 11px rgba(25, 50, 81, 0.2);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0px;
+  min-height: 100vh;
+  margin-bottom: 100px;
+}
+
+h1 {
+  text-transform: uppercase;
+  color: var(--primary);
+  text-align: center;
+  line-height: 1.2rem;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1rem;
+  margin: 0;
+  padding-top: 0;
+}
+
+h2,
+.teams {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+
+/* Journal */
+h3 {
+  color: var(--primary);
+  padding: 0;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+p {
+  margin: 0;
+}
+
+/* Team-Box Headline */
+h4 {
+  color: var(--primary);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+/* btn gobal */
+button {
+  border-radius: 4px;
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  background: var(--background);
+}
+
+/* btn journal.html --> cancel */
+.cancel__button {
+  width: 12rem;
+}
+
+/* btn ratings.html */
+.energy__infographic--button {
+  align-self: flex-end;
+  margin-top: 0.7rem;
+}
+
+.infographic__button--students {
+  background-color: var(--primary);
+  color: var(--background);
+  font-size: 0.8rem;
+  font-weight: 400;
+  border-radius: 3px;
+  padding: 0.2rem 0.7rem;
+  margin-right: 0.5rem;
+}
+
+.infographic__button--you {
+  background-color: var(--danger-ultralight);
+  color: var(--danger-strong);
+  font-size: 0.8rem;
+  font-weight: normal;
+  border-radius: 3px;
+  border-radius: 3px;
+  padding: 0.2rem 0.7rem;
+}
+
+.rate__button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.rate__button--button {
+  top: 6rem;
+  background-color: var(--danger-strong);
+  color: var(--background);
+  width: 12rem;
+  height: 3rem;
+}
+
+.rate__button--star {
+  font-size: 1.1rem;
+}
+
+/* btn energy.html */
+
+.energy__level-btn {
+  /*Gibt es die Klasse energy__level?*/
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.energy__level-btn-100 {
+  background-color: var(--danger-strong);
+  color: var(--header);
+  padding: 0.9rem;
+}
+.energy__level-btn-75 {
+  background-color: var(--danger-medium);
+  color: var(--header);
+  padding: 0.9rem;
+}
+.energy__level-btn-50 {
+  background-color: var(--danger-light);
+  color: var(--danger-strong);
+  padding: 0.9rem;
+}
+
+.energy__level-btn-25 {
+  background-color: var(--danger-ultralight);
+  color: var(--danger-strong);
+  padding: 0.9rem;
+}
