@@ -45,11 +45,16 @@
 }
 
 
+.rating-inner {
+  margin: 0.3rem;
+}
+
+
 .rating-stars svg {
   padding: 0;
   fill: var(--unselected-ratings);
   margin-right: 1rem; 
-  margin-top:1rem;
+  margin-top:rem;
   width: 1.3rem;
 }
 

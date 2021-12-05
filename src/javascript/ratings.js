@@ -128,11 +128,12 @@ function createComp(day, index) {
 }
 
 const stars = document.querySelectorAll('.rating-star svg')
+const square = document.querySelectorAll('.rating-square svg')
 const form = document.querySelector('form')
 
 
-function starDust(){
 
+let starDust = 0
 stars.forEach((clickedStar, clickedIndex) => {
 
   clickedStar.addEventListener('click', () => {
@@ -143,14 +144,28 @@ stars.forEach((clickedStar, clickedIndex) => {
         star.classList.remove('active')
       }
     })
-    const starRating = clickedIndex + 1
-    return starRating
+     starDust = clickedIndex + 1
+     console.log(starDust)
   })
 })
 
-}
 
-starDust()
+let squareDust = 0
+
+square.forEach((clickedSquare, clickedIndex) => {
+
+  clickedSquare.addEventListener('click', () => {
+    square.forEach((square, squareIndex) => {
+      if (squareIndex <= clickedIndex) {
+        square.classList.add('active')
+      } else {
+        square.classList.remove('active')
+      }
+    })
+    squareDust = clickedIndex +1
+    console.log(squareDust)
+  })
+})
 
 
 form.addEventListener('submit', (event) => {
@@ -158,14 +173,11 @@ form.addEventListener('submit', (event) => {
 
   const inputValueMotto = form.motto.value
   const inputValueNotes = form.notes.value
-  const inputValueRating = starRating
-  const inputValueComp = 3
+  const inputValueRating = starDust
+  const inputValueComp = squareDust
   const newEntry = { motto: inputValueMotto, notes: inputValueNotes, rating: inputValueRating, comprehension: inputValueComp  }
   
   form.reset()
-
- console.log(newEntry, 'das hier ist das erste log')
-
  
       fetch("https://muc-student-companion-api.vercel.app/api/journals",
      {
@@ -174,7 +186,7 @@ form.addEventListener('submit', (event) => {
         body: JSON.stringify(newEntry)
        })
         .then((res) => res.json())
-        .then((newEntry) => console.log(newEntry, '2 log'));
+        .then((newEntry) => console.log(newEntry));
 
 })
 
