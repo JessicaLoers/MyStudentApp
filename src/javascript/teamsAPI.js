@@ -29,5 +29,3 @@ fetch('https://muc-student-companion-api.vercel.app/api/teams')
   })
 
 
-
-

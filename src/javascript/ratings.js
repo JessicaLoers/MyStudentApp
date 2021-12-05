@@ -41,13 +41,11 @@ fetch('https://muc-student-companion-api.vercel.app/api/journals')
   .then((data) => {
     const journal = data
 
-  
-
     journal.forEach((day, index) => {
       entryDate (day, index)
       createStars(day, index)
       createComp(day, index)
-      createEntry(day, index)
+      createEntry(day,index)
       
     })
   })
@@ -77,7 +75,7 @@ function createEntry(day, index) {
   const labelNote = document.createElement('h3')
   const contentNote = document.createElement('p')
   labelNote.innerText = 'Note:'
-  contentNote.innerText = `${day.notes}`
+  contentNote.innerText = day.notes
   entry.append(labelNote, contentNote)
 }
 
@@ -128,3 +126,57 @@ function createComp(day, index) {
     compBox.appendChild(compSign)
   }
 }
+
+const stars = document.querySelectorAll('.rating-star svg')
+const form = document.querySelector('form')
+
+
+function starDust(){
+
+stars.forEach((clickedStar, clickedIndex) => {
+
+  clickedStar.addEventListener('click', () => {
+    stars.forEach((star, starIndex) => {
+      if (starIndex <= clickedIndex) {
+        star.classList.add('active')
+      } else {
+        star.classList.remove('active')
+      }
+    })
+    const starRating = clickedIndex + 1
+    return starRating
+  })
+})
+
+}
+
+starDust()
+
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault()
+
+  const inputValueMotto = form.motto.value
+  const inputValueNotes = form.notes.value
+  const inputValueRating = starRating
+  const inputValueComp = 3
+  const newEntry = { motto: inputValueMotto, notes: inputValueNotes, rating: inputValueRating, comprehension: inputValueComp  }
+  
+  form.reset()
+
+ console.log(newEntry, 'das hier ist das erste log')
+
+ 
+      fetch("https://muc-student-companion-api.vercel.app/api/journals",
+     {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newEntry)
+       })
+        .then((res) => res.json())
+        .then((newEntry) => console.log(newEntry, '2 log'));
+
+})
+
+
+

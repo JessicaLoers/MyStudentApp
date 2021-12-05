@@ -1,7 +1,18 @@
 // Set Date varriables
-let today = new Date()
-let date =
-  'on' +
+const weekday = [
+  'Sonntag',
+  'Montag',
+  'Dienstag',
+  'Mittwoch',
+  'Donnerstag',
+  'Freitag',
+  'Samstag',
+]
+
+const today = new Date()
+const date =
+  'am ' +
+  weekday[today.getDay()] +
   ' ' +
   today.getUTCDate() +
   '.' +
@@ -9,14 +20,12 @@ let date =
   '.' +
   today.getUTCFullYear()
 
-
 // Set Date
 const header = document.querySelector('header')
 let todayDate = document.createElement('p')
 header.appendChild(todayDate)
 todayDate.classList.add('header-label')
 todayDate.innerText = date
-
 
 // Buddys
 const plusSvg =
